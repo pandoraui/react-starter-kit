@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "amazeui": "^2.4.0",
-    "amazeui-react": "^1.0.0",
+    "amazeui-react": "latest",
     "browser-sync": "^2.6.4",
     "browserify": "^10.2.1",
     "browserify-shim": "^3.8.7",
