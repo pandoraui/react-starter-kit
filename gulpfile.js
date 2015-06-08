@@ -13,6 +13,7 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var slash = require('slash');
 var reload = browserSync.reload;
 var isProduction = process.env.NODE_ENV === "production";
 
@@ -71,9 +72,10 @@ gulp.task('copy', function () {
   ], {
     dot: true
   }).pipe(gulp.dest(function(file) {
-    if (file.path.indexOf('.css') > -1) {
+    var filePath = slash(file.path);
+    if (filePath.indexOf('.css') > -1) {
       return paths.dist.css;
-    } else if (file.path.indexOf('/amazeui/dist/fonts/') > -1) {
+    } else if (filePath.indexOf('/amazeui/dist/fonts/') > -1) {
       return paths.dist.fonts;
     }
     return paths.dist.base;
