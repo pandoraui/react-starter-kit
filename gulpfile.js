@@ -100,7 +100,7 @@ var b = browserify({
   packageCache: {},
   entries: ['./app/js/app.js'],
   debug: !isProduction,
-  transform: ['reactify']
+  transform: ['babelify']
 });
 
 if (!isProduction) {
