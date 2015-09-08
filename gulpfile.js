@@ -107,8 +107,8 @@ if (!isProduction) {
   b = watchify(b);
 }
 
-// 如果不想把 React 打包进去，可以把下面一行注释去掉
-// b.transform('browserify-shim', {global: true});
+// 如果想把 React 打包进去，可以把下面一行注释去掉
+b.transform('browserify-shim', {global: true});
 
 var bundle = function() {
   var s = (
@@ -152,6 +152,7 @@ gulp.task('clean', function(cb) {
 
 // 监视源文件变化自动cd编译
 gulp.task('watch', function() {
+  console.log('生产环境：' + isProduction);
   gulp.watch('app/**/*.html', ['html']);
   gulp.watch('app/less/**/*less', ['styles']);
   gulp.watch('app/i/**/*', ['images']);

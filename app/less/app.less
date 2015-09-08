@@ -4,17 +4,35 @@
 
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+  // height: 100%;
 }
 
-.ask-page {
-  height: 100%;
-  overflow-y: scroll;
+.am-header .am-header-title{
+  margin: 0 15%;
+}
+.am-header .am-header-left{
+  left: 5px;
+}
+.am-header .am-header-right{
+  right: 5px;
+}
+.am-header-default .am-header-nav>a{
+  min-width: 40px;
+}
+.am-header-default .am-header-nav>a+a{
+  margin-left: 0;
+}
+
+.ask-pages {
+  //height: 100%;
+  // overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
-
+.ask-page{
+  padding-top: 50px;
+  box-sizing: border-box;
+}
 .ask-header {
   margin-bottom: 0;
 }

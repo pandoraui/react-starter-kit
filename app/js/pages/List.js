@@ -3,15 +3,20 @@
 var React = require('react');
 // var AMR = require('amazeui-react');
 var AMR = require('../reactui');
-var TabsSelect = require('./Tab');
 var NavLink = require('../components/NavLink');
+
 var AppActions = require('../actions/AppActions');
 
 var pageInfo = {
-  title: '页面1'
+  title: '列表页'
 };
 
-var Page1 = React.createClass({
+var List = React.createClass({
+  getInitialState: function() {
+    return {
+      id: this.props.params.id
+    };
+  },
   componentDidMount: function() {
     AppActions.updateHeader(pageInfo);
   },
@@ -20,13 +25,12 @@ var Page1 = React.createClass({
       <div className="ask-page">
         <NavLink/>
         <AMR.Container className="am-padding-vertical-lg">
-          <h2>页面 1</h2>
-          <p>页面内容</p>
-          <TabsSelect />
+          <h2>列表页面</h2>
+          <p>列表ID：{this.state.id}</p>
         </AMR.Container>
       </div>
     );
   }
 });
 
-module.exports = Page1;
+module.exports = List;

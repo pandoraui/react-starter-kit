@@ -11,10 +11,11 @@ var AMR = require('../reactui');
 var NavLink = require('../components/NavLink');
 
 var pageInfo = {
-  title: '首页'
+  title: '活动页面',
+  header: null
 };
 
-var Index = React.createClass({
+var Action = React.createClass({
   getInitialState: function() {
     return {};
   },
@@ -22,13 +23,14 @@ var Index = React.createClass({
     AppActions.updateHeader(pageInfo);
   },
   render: function() {
+    console.log('全屏页面');
     return (
       <div className="ask-page">
         <NavLink/>
         <div className="ask-banner">
           <AMR.Container>
-            <h1>Hello World!</h1>
-            <h2>欢迎使用 Amaze UI React 入门套件。</h2>
+            <h1>活动或主题页面</h1>
+            <h2>这是一个全屏单页面，无头部。</h2>
           </AMR.Container>
         </div>
       </div>
@@ -36,4 +38,4 @@ var Index = React.createClass({
   }
 });
 
-module.exports = Index;
+module.exports = Action;
