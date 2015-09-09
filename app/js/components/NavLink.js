@@ -21,6 +21,7 @@ var NavLink = React.createClass({
           <a className="am-btn am-btn-link" href="#/list/34">列表项</a>
           <a className="am-btn am-btn-link" href="#/about/company">公司</a>
           <a className="am-btn am-btn-link" href="#/action">活动页</a>
+          <a className="am-btn am-btn-link" href="#/ajax">Ajax 数据</a>
       </AMR.Container>
     );
   }

@@ -4,6 +4,16 @@ var React = require('react');
 // import Reflux from 'reflux';
 var Router = require('react-router');
 
+
+
+// global.uiRequire = function (src) {
+//   if (src) {
+//     return require('../../../src/js/' + src)
+//   } else {
+//     return require('../../../src/js')
+//   }
+// }
+
 // var AppStore = require('./stores/AppStore');
 // var AppActions = require('./actions/AppActions');
 

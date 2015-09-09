@@ -29,7 +29,11 @@ var HeaderBar = React.createClass({
     );
   },
   _onChange: function() {
-    this.setState(AppStore.getHeaderInfo());
+    //此处要更新一下 TDK，目前只提供 title 的
+    //console.log(React.findDOMNode())
+    var headerInfo = AppStore.getHeaderInfo();
+    document.title = headerInfo.title + '-爱抢购';
+    this.setState(headerInfo);
   }
 });
 
