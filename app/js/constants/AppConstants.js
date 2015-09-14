@@ -3,6 +3,7 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
+  APP_AJAX: null,
   APP_HEADER: null,
   APP_CREATE: null,
   APP_COMPLETE: null,

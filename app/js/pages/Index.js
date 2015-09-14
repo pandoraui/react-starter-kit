@@ -7,7 +7,7 @@ var Link = Router.Link;
 
 var AppActions = require('../actions/AppActions');
 
-var AMR = require('../reactui');
+var RUI = require('../reactUI');
 var NavLink = require('../components/NavLink');
 
 var pageInfo = {
@@ -26,10 +26,10 @@ var Index = React.createClass({
       <div className="ask-page">
         <NavLink/>
         <div className="ask-banner">
-          <AMR.Container>
+          <RUI.Container>
             <h1>Hello World!</h1>
             <h2>欢迎使用 Amaze UI React 入门套件。</h2>
-          </AMR.Container>
+          </RUI.Container>
         </div>
       </div>
     );

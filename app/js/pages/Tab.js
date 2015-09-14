@@ -1,9 +1,9 @@
 'use strict';
 
 var React = require('react');
-// var AMR = require('amazeui-react');
-var AMR = require('../reactui');
-var Tabs = AMR.Tabs;
+// var RUI = require('amazeui-react');
+var RUI = require('../reactUI');
+var Tabs = RUI.Tabs;
 
 var tabkey = "1";
 

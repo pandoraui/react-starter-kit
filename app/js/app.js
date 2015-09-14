@@ -17,13 +17,13 @@ var Router = require('react-router');
 // var AppStore = require('./stores/AppStore');
 // var AppActions = require('./actions/AppActions');
 
-// var AMR = require('amazeui-react');
-// var AMR = require('./reactui');
-// var Topbar = AMR.Topbar;
-// var Nav = AMR.Nav;
-// var CollapsibleNav = AMR.CollapsibleNav;
-// var Container = AMR.Container;
-// var Header = AMR.Header;
+// var RUI = require('amazeui-react');
+// var RUI = require('./reactui');
+// var Topbar = RUI.Topbar;
+// var Nav = RUI.Nav;
+// var CollapsibleNav = RUI.CollapsibleNav;
+// var Container = RUI.Container;
+// var Header = RUI.Header;
 
 // var RouteLink = require('./components/RouteLink');
 // var SiteFooter = require('./components/SiteFooter');

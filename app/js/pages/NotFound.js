@@ -5,7 +5,7 @@ var Router = require('react-router');
 var Route = Router.Route;
 var Link = Router.Link;
 
-var AMR = require('../reactui');
+var RUI = require('../reactUI');
 var NavLink = require('../components/NavLink');
 var AppActions = require('../actions/AppActions');
 
@@ -21,10 +21,10 @@ var NotFound = React.createClass({
     return (
       <div className="ask-page">
         <div className="ask-banner">
-          <AMR.Container>
+          <RUI.Container>
             <h1>404 页面未找到！！！</h1>
             <h2>点此返回<a className="am-btn am-btn-link" href="#/">首页</a></h2>
-          </AMR.Container>
+          </RUI.Container>
         </div>
       </div>
     );

@@ -3,8 +3,8 @@
 var React = require('react');
 var Router = require('react-router');
 
-var AMR = require('../reactui');
-var Header = AMR.Header;
+var RUI = require('../reactUI');
+var Header = RUI.Header;
 
 var AppStore = require('../stores/AppStore');
 

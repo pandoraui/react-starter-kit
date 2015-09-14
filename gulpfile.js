@@ -103,6 +103,15 @@ var b = browserify({
   transform: ['babelify']
 });
 
+
+/*
+debug: true是告知Browserify在运行同时生成内联sourcemap用于调试。
+引入gulp-sourcemaps并设置loadMaps: true是为了读取上一步得到的内联sourcemap，并将其转写为一个单独的sourcemap文件。
+vinyl-source-stream用于将Browserify的bundle()的输出转换为Gulp可用的vinyl（一种虚拟文件格式）流。
+vinyl-buffer用于将vinyl流转化为buffered vinyl文件（gulp-sourcemaps及大部分Gulp插件都需要这种格式）。
+ */
+
+
 if (!isProduction) {
   b = watchify(b);
 }
@@ -110,12 +119,15 @@ if (!isProduction) {
 // 如果想把 React 打包进去，可以把下面一行注释去掉
 b.transform('browserify-shim', {global: true});
 
+
 var bundle = function() {
   var s = (
     b.bundle()
       .on('error', $.util.log.bind($.util, 'Browserify Error'))
       .pipe(source('app.js'))
       .pipe(buffer())
+      // .pipe($.sourcemaps.init({loadMaps: true}))
+      // .pipe($.sourcemaps.write("."))
       .pipe(gulp.dest(paths.dist.js))
       .pipe($.size({title: 'script'}))
   );

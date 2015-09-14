@@ -17,6 +17,8 @@ var List = require('./pages/List');
 var Company = require('./pages/Company');
 var Action = require('./pages/Action');
 var Ajax = require('./pages/Ajax');
+var Complex = require('./pages/Complex');
+var Chart = require('./pages/Chart');
 var NotFound = require('./pages/NotFound');
 
 var routes = (
@@ -30,6 +32,8 @@ var routes = (
     <Route name="company" path="about/company" handler={Company}/>
     <Route name="action" handler={Action}/>
     <Route name="ajax" handler={Ajax}/>
+    <Route name="complex" handler={Complex}/>
+    <Route name="chart" handler={Chart}/>
 
     <NotFoundRoute handler={NotFound} />
   </Route>

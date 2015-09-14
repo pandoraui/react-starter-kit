@@ -1,8 +1,8 @@
 'use strict';
 
 var React = require('react');
-// var AMR = require('amazeui-react');
-var AMR = require('../reactui');
+// var RUI = require('amazeui-react');
+var RUI = require('../reactUI');
 var NavLink = require('../components/NavLink');
 var AppActions = require('../actions/AppActions');
 
@@ -18,10 +18,10 @@ var Login = React.createClass({
     return (
       <div className="ask-page">
         <NavLink/>
-        <AMR.Container className="am-padding-vertical-lg">
+        <RUI.Container className="am-padding-vertical-lg">
           <h2>登录</h2>
           <p>登录页面</p>
-        </AMR.Container>
+        </RUI.Container>
       </div>
     );
   }

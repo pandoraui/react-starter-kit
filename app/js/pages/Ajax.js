@@ -5,44 +5,64 @@ var Router = require('react-router');
 var Route = Router.Route;
 var Link = Router.Link;
 
-var AMR = require('../reactui');
+var RUI = require('../reactUI');
+
 var NavLink = require('../components/NavLink');
 
 var AppActions = require('../actions/AppActions');
 
-var $Ajax = require('../utils/Ajax');
+var $ = require('../utils/Ajax');
 // var $ = require('npm-zepto');
 
 var pageInfo = {
   title: 'Ajax请求'
 };
 
+
+
 var UserGist = React.createClass({
   getInitialState: function() {
+    console.log('init');
     return {
       loading: true,
-      username: '',
-      lastGistUrl: ''
+      content: null
     };
   },
 
   componentDidMount: function() {
-    this.setState({
-      loading: true
-    });
-    //$Ajax.get(this.props.source, function(result) {
-    $Ajax.get(this.props.source, 
-      function(result) {
+    console.log('DidMount');
+    AppActions.ajax({
+      type: "GET",
+      url: this.props.source,
+      success: function (result) {
         var lastGist = result[0];
         if (this.isMounted()) {
-          this.setState({
-            loading: false,
+          var useData = {
             username: lastGist.owner.login,
             lastGistUrl: lastGist.html_url
+          };
+          this.setState({
+            loading: false,
+            content: useData
           });
         }
       }.bind(this)
-    );
+    });
+
+    //$Ajax.get(this.props.source, function(result) {
+    // $._get(this.props.source, function(result) {
+    //     var lastGist = result[0];
+    //     if (this.isMounted()) {
+    //       this.setState({
+    //         loaded: true,
+    //         content: {
+    //           username: lastGist.owner.login,
+    //           lastGistUrl: lastGist.html_url
+    //         }
+    //       });
+    //     }
+    //   }.bind(this)
+    // );
   },
 
 //-webkit-animation: fa-spin 2s infinite linear;
@@ -51,12 +71,12 @@ var UserGist = React.createClass({
   render: function() {
     var renderHtml;
     if (this.state.loading) {
-      renderHtml = (<div className="am-center"><i className="am-icon-spinner am-icon-spin"></i></div>);
+      renderHtml = (<div className="am-text-center"><i className="am-icon-spinner am-icon-spin"></i></div>);
     } else {
       renderHtml = (
         <div>
-          {this.state.username}'s last gist is
-          <a href={this.state.lastGistUrl}>here</a>.
+          {this.state.content.username}'s last gist is
+          <a href={this.state.content.lastGistUrl}>here</a>.
         </div>
       );
     }
@@ -72,11 +92,11 @@ var Ajax = React.createClass({
     return (
       <div className="ask-page">
         <div className="ask-banner">
-          <AMR.Container>
+          <RUI.Container>
             <h1>Ajax请求</h1>
             <p>Ajax 效果如下</p>
             <UserGist source="https://api.github.com/users/octocat/gists" />
-          </AMR.Container>
+          </RUI.Container>
         </div>
       </div>
     );

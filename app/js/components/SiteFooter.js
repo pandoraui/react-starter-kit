@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var AMR = require('amazeui-react');
+var RUI = require('amazeui-react');
 var year = new Date().getFullYear();
 
 var SiteFooter = React.createClass({
@@ -9,10 +9,10 @@ var SiteFooter = React.createClass({
   render: function() {
     return (
       <footer className="ask-footer">
-        <AMR.Container>
+        <RUI.Container>
           <p>© {year} iqg, Inc. Licensed under MIT license.
             Developed with WebStorm.</p>
-        </AMR.Container>
+        </RUI.Container>
       </footer>
     );
   }

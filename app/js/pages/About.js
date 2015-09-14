@@ -1,10 +1,11 @@
 'use strict';
 
 var React = require('react');
-// var AMR = require('amazeui-react');
-var AMR = require('../reactui');
+var RUI = require('../reactUI');
 var NavLink = require('../components/NavLink');
 var AppActions = require('../actions/AppActions');
+
+
 
 var pageInfo = {
   title: '关于我们',
@@ -34,10 +35,10 @@ var About = React.createClass({
     return (
       <div className="ask-page">
         <NavLink/>
-        <AMR.Container className="am-padding-vertical-lg">
+        <RUI.Container className="am-padding-vertical-lg">
           <h2>关于我们</h2>
           <p>页面内容</p>
-        </AMR.Container>
+        </RUI.Container>
       </div>
     );
   }

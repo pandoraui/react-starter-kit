@@ -7,7 +7,7 @@ var Link = Router.Link;
 
 var AppActions = require('../actions/AppActions');
 
-var AMR = require('../reactui');
+var RUI = require('../reactUI');
 var NavLink = require('../components/NavLink');
 
 var pageInfo = {
@@ -28,10 +28,10 @@ var Action = React.createClass({
       <div className="ask-page">
         <NavLink/>
         <div className="ask-banner">
-          <AMR.Container>
+          <RUI.Container>
             <h1>活动或主题页面</h1>
             <h2>这是一个全屏单页面，无头部。</h2>
-          </AMR.Container>
+          </RUI.Container>
         </div>
       </div>
     );

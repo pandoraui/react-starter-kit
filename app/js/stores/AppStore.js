@@ -96,11 +96,17 @@ AppDispatcher.register( function(action) {
   var text;
 
   switch (action.actionType) {
+    case AppConstants.APP_AJAX:
+      if (action.obj) {
+        update(action.content);
+      }
+      AppStore.emitChange();
+      break;
     case AppConstants.APP_HEADER:
       if (action.obj) {
         update(action.obj);
-        AppStore.emitChange();
       }
+      AppStore.emitChange();
       break;
     default:
       // no op
